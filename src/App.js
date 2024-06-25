@@ -10,13 +10,8 @@ function App() {
     return <Card 
     // react-jsx-dev-runtime.development.js:89 Warning: Each child in a list should have a unique "key" prop.   
                  key={item.id} 
-                 title={item.title} 
-                 img={item.coverImg} 
-                 rating={item.stats.rating}
-                 reviewCount={item.stats.reviewCount}
-                 country={item.location} 
-                 price={item.price}
-                 openSpots={item.openSpots} />
+                 item={item}
+             />
   })
   return (
     <div>
