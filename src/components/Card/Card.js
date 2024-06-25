@@ -2,10 +2,19 @@ import React from 'react';
 import './Card.css';
 
 export default function Card (props) {
+
+    let badgeText
+    if(props.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.country === "Online") {
+        badgeText = "ONLINE"
+    }
+
     console.log(props)
     return(
         <div className='card'>
-            {/* In JSX, you should use curly braces directly around the expression outside of the string. */}
+           {/* {props.openSpots === 0 &&<div className='card--badge'>SOLD OUT</div>} conditional rendering using ternary operator */}
+           {badgeText && <div className='card--badge'>{badgeText}</div>}
             <img src={`./images/${props.img}`} className='card--image'/>
             <div className='card--stats'>
                 <img src="./images/star.png" className='card--star'/>
