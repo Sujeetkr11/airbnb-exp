@@ -10,7 +10,7 @@ function App() {
     return <Card 
     // react-jsx-dev-runtime.development.js:89 Warning: Each child in a list should have a unique "key" prop.   
                  key={item.id} 
-                 item={item}
+                 {...item}
              />
   })
   return (
