@@ -1,21 +1,29 @@
 import logo from './logo.svg';
-import './App.css';
+import './components/Card/Card.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-import Card
- from './components/Card/Card';
+import Card from './components/Card/Card';
+import data from './data';
+
 function App() {
+  const cardData = data.map((item) => {
+    return <Card 
+    // react-jsx-dev-runtime.development.js:89 Warning: Each child in a list should have a unique "key" prop.   
+                 key={item.id} 
+                 title={item.title} 
+                 img={item.coverImg} 
+                 rating={item.stats.rating}
+                 reviewCount={item.stats.reviewCount}
+                 country={item.location} 
+                 price={item.price}/>
+  })
   return (
     <div>
       <Navbar/>
       <Hero />
-      <Card 
-        img="katie-zaferes.png" 
-        rating="5.0" 
-        reviewCount={6} 
-        country="USA" 
-        title="Life Lessons with Katie Zaferes"
-        price={136}/>
+      <div className='cards--list'>
+        {cardData}
+      </div>
     </div>
   );
 }

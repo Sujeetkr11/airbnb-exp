@@ -1,28 +1,41 @@
-.card{
+.cards--list {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+  }
+  
+  .card {
     width: 175px;
     font-size: 12px;
     padding: 20px;
-}
-
-.card--image{
+    flex: 0 0 auto;  /*Added */
+    display: flex;   /*Added */
+    flex-direction: column; /*Added */
+    margin-right: 20px; /* Space between cards */
+  }
+  
+  .card--image {
     width: 100%;
     border-radius: 9px;
-}
-
-.card--stats{
+  }
+  
+  .card--stats {
     display: flex;
     align-items: center;
-}
+    padding:5px;
 
-.card--star{
+  }
+  
+  .card--star {
     height: 10px;
     padding: 2px;
-}
-
-.gray {
+  }
+  
+  .gray {
     color: #918E9B;
-}
-
-.bold{
+  }
+  
+  .bold {
     font-weight: bold;
-}
+  }
+  
